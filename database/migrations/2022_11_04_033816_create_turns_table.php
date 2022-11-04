@@ -16,8 +16,8 @@ return new class extends Migration {
             $table->id();
             $table->timestamps();
             $table->string('name', 100);
-            $table->dateTime('clock_in');
-            $table->dateTime('clock_out');
+            $table->time('clock_in');
+            $table->time('clock_out');
         });
     }
 
