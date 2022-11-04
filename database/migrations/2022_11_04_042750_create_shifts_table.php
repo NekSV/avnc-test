@@ -12,10 +12,10 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('turns', function (Blueprint $table) {
+        Schema::create('shifts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name', 100);
+            $table->foreignIdFor(\App\Models\Employees::class);
             $table->dateTime('clock_in');
             $table->dateTime('clock_out');
         });
@@ -28,6 +28,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('turns');
+        Schema::dropIfExists('shifts');
     }
 };

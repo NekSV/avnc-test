@@ -11,12 +11,7 @@ class Branches extends Model
 
     protected $fillable = ['name', 'turns_id'];
 
-    public function turns(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Turns::class);
-    }
-
-    public function employess(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function employees(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Employees::class);
     }

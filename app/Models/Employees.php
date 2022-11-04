@@ -13,8 +13,8 @@ class Employees extends Model
         'birthdate', 'email', 'country_id', 'city', 'address', 'phone', 'hiring_date',
         'status', 'genres_id'];
 
-    public function turns(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function shifts(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Turns::class);
+        return $this->hasMany(Shifts::class);
     }
 }

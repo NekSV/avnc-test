@@ -29,6 +29,7 @@ return new class extends Migration
             $table->date('hiring_date');
             $table->boolean('status');
             $table->foreignIdFor(\App\Models\Genre::class);
+            $table->foreignIdFor(\App\Models\Turns::class);
 
         });
     }
