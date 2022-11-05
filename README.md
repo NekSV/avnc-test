@@ -23,3 +23,8 @@ Seed your db for testing
 ```bash
  php artisan db:seed
 ```
+
+Add views
+```bash
+php artisan make:migration employees_entry_report
+```
