@@ -9,9 +9,9 @@ class Employees extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'employee_code', 'first_name', 'last_name',
-        'birthdate', 'email', 'country_id', 'city', 'address', 'phone', 'hiring_date',
-        'status', 'genres_id'];
+    protected $fillable = ['branches_id', 'employee_code', 'first_name',
+        'last_name', 'birthdate', 'email', 'country_id', 'city', 'address', 'phone', 'hiring_date', 'status',
+        'genre_id', 'turns_id'];
 
     public function shifts(): \Illuminate\Database\Eloquent\Relations\HasMany
     {

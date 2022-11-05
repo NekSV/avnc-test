@@ -14,6 +14,14 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('genres')->insert([
+            'name' => 'male'
+        ]);
+        DB::table('genres')->insert([
+            'name' => 'female'
+        ]);
+        DB::table('genres')->insert([
+            'name' => 'other'
+        ]);
     }
 }

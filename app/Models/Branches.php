@@ -9,7 +9,7 @@ class Branches extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'turns_id'];
+    protected $fillable = ['name'];
 
     public function employees(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
