@@ -32,16 +32,18 @@ return new class extends Migration
         return <<<EOD
             CREATE VIEW view_entries_report AS
                 SELECT e.employee_code,
-                       CONCAT_WS(' ' ,e.first_name, e.last_name) full_name,
-                       t.clock_in expected_entry,
-                       s.clock_in actual_entry,
-                       t.clock_out expected_leave,
-                       s.clock_out actual_leave,
-                       TIMESTAMPDIFF(MINUTE , t.clock_in, s.clock_in) <= 0 entry_on_time,
-                       TIMESTAMPDIFF(MINUTE , t.clock_out, s.clock_out) > 1 leave_on_time
+                       CONCAT_WS(' ', e.first_name, e.last_name)           full_name,
+                       b.name branch_name,
+                       t.clock_in                                          expected_entry,
+                       s.clock_in                                          actual_entry,
+                       TIMESTAMPDIFF(MINUTE, t.clock_in, s.clock_in) <= 0  entry_on_time,
+                       t.clock_out                                         expected_leave,
+                       s.clock_out                                         actual_leave,
+                       TIMESTAMPDIFF(MINUTE, t.clock_out, s.clock_out) > 1 leave_on_time
                 FROM shifts s
                          inner join employees e on s.employees_id = e.id
                          inner join turns t on e.turns_id = t.id
+                         inner join branches b on e.branches_id = b.id
             EOD;
     }
 
