@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        \DB::statement($this->deleteView());
         \DB::statement($this->createView());
     }
 

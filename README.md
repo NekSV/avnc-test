@@ -28,3 +28,8 @@ Add views
 ```bash
 php artisan make:migration employees_entry_report
 ```
+
+Refresh your data
+```bash
+php artisan migrate:fresh --seed
+```
